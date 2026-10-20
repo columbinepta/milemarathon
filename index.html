@@ -453,6 +453,16 @@ var h5vpBlock = {"siteUrl":"https://milemarathon.com","userId":"0","pauseOther":
 </style>
 <style id="mm-home-css">
 .nfd-px-base{padding-left:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50)}
+.mm-race{align-self:stretch;margin-top:var(--wp--preset--spacing--40);color:#fff;text-align:center}
+.mm-race [hidden]{display:none}
+.mm-race-date{margin:0;font-size:clamp(16px,1rem + .5vw,22px);line-height:1.5}
+.mm-race-date strong{font-weight:600}
+.mm-countdown{display:grid;grid-template-columns:repeat(4,minmax(0,5.5em));justify-content:center;gap:.5em;margin:1em 0 0;padding:0;list-style:none}
+.mm-countdown li{padding:.5em .2em;border:1px solid rgba(255,255,255,.6);border-radius:8px;background:rgba(0,0,0,.2);text-align:center;line-height:1.2}
+.mm-countdown b{display:block;font-size:1.9em;font-weight:600;font-variant-numeric:tabular-nums}
+.mm-countdown span{font-size:.72em;text-transform:uppercase;letter-spacing:.03em}
+.mm-race-now{margin:1em 0 0;font-size:1.4em;font-weight:600}
+@media (max-width:782px){.nfd-px-base>h1{margin-left:0!important}.mm-race{text-align:left}.mm-countdown{grid-template-columns:repeat(4,minmax(0,1fr));justify-content:start;max-width:24em}}
 </style>
 <style id="mm-site-css">
 header>.wp-block-group.alignfull{padding-left:var(--wp--preset--spacing--50)!important;padding-right:var(--wp--preset--spacing--50)!important}
@@ -527,6 +537,36 @@ header .wp-block-navigation__responsive-container.is-menu-open{padding:15px var(
 <div class="nfd-text-md md:nfd-justify-start md:nfd-self-start wp-block-group is-content-justification-left is-layout-constrained wp-container-core-group-is-layout-3da2b1e7 wp-block-group-is-layout-constrained">
 <p class="md:nfd-text-left has-text-align-center wp-block-paragraph" style="font-size:clamp(14.082px, 0.88rem + ((1vw - 3.2px) * 0.467), 21px);">Inspiring joy and building community, <br>one mile at a time.</p>
 </div>
+<div class="mm-race" data-start="2027-05-18T08:45:00-06:00" data-end="2027-05-18T10:30:00-06:00" data-units='[["day", "days"], ["hour", "hours"], ["minute", "minutes"], ["second", "seconds"]]'>
+<p class="mm-race-date"><strong>Tuesday, May 18, 2027</strong><br>8:45–10:30 am · Columbine Elementary</p>
+<ul class="mm-countdown" aria-label="Time until the race" hidden></ul>
+<p class="mm-race-now" hidden>It’s race day!</p>
+</div>
+<script>
+(function () {
+  var race = document.querySelector('.mm-race');
+  var start = Date.parse(race.dataset.start), end = Date.parse(race.dataset.end);
+  var list = race.querySelector('.mm-countdown'), now = race.querySelector('.mm-race-now');
+  var units = JSON.parse(race.dataset.units), timer;
+  function tick() {
+    var t = start - Date.now();
+    if (t <= 0) {
+      clearInterval(timer);
+      list.hidden = true;
+      now.hidden = Date.now() >= end;
+      return;
+    }
+    var parts = [Math.floor(t / 864e5), Math.floor(t / 36e5) % 24, Math.floor(t / 6e4) % 60, Math.floor(t / 1e3) % 60];
+    list.innerHTML = parts.map(function (n, i) {
+      return '<li><b>' + n + '</b><span>' + units[i][n === 1 ? 0 : 1] + '</span></li>';
+    }).join('');
+    list.hidden = false;
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+})();
+</script>
+
 </div>
 </div></div>
 </div>
