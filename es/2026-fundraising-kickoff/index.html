@@ -431,6 +431,17 @@ body, .editor-styles-wrapper {
 @font-face{font-family:"Playfair Display";font-style:normal;font-weight:900;font-display:fallback;src:url('../../wp-content/themes/yith-wonder/assets/fonts/playfair-display-v29-latin-900.woff2') format('woff2');}
 @font-face{font-family:"Playfair Display";font-style:italic;font-weight:900;font-display:fallback;src:url('../../wp-content/themes/yith-wonder/assets/fonts/playfair-display-v29-latin-900italic.woff2') format('woff2');}
 </style>
+<style id="mm-site-css">
+header>.wp-block-group.alignfull{padding-left:var(--wp--preset--spacing--50)!important;padding-right:var(--wp--preset--spacing--50)!important}
+.wp-block-post-title,.wp-block-query-title{color:var(--wp--preset--color--primary)}
+.entry-content>.nfd-container{padding-left:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50)}
+header .alignwide>a.mm-lang{margin-left:auto;padding:.2em .9em;border:1px solid currentColor;border-radius:999px;color:var(--wp--preset--color--primary);font-size:var(--wp--preset--font-size--small);line-height:1.5;text-decoration:none;white-space:nowrap}
+header .alignwide>a.mm-lang:hover,header .alignwide>a.mm-lang:focus{background:var(--wp--preset--color--primary);color:var(--wp--preset--color--base)}
+header .alignwide>.wp-block-navigation{flex:0 1 auto}
+@media (min-width:600px){header .alignwide>a.mm-lang{order:1;margin-left:0}header .alignwide>.wp-block-navigation{margin-left:auto}}
+.entry-content>.mm-email-note{max-width:720px;text-align:center}
+.mm-email-note .wp-block-buttons{justify-content:center;margin-top:1.5em}
+</style>
 </head>
 
 <body class="wp-singular page-template-default page page-id-474 wp-embed-responsive wp-theme-yith-wonder translatepress-es_MX">
@@ -445,6 +456,7 @@ body, .editor-styles-wrapper {
 </div>
 
 
+<a class="mm-lang" href="../../2026-fundraising-kickoff/" hreflang="en" lang="en">English</a>
 <nav class="has-text-color has-primary-color has-background has-base-background-color has-small-font-size is-responsive items-justified-right wp-block-navigation is-content-justification-right is-layout-flex wp-container-core-navigation-is-layout-7fb62812 wp-block-navigation-is-layout-flex" aria-label="Navegación" 
 		 data-wp-interactive="core/navigation" data-wp-context='{"overlayOpenedBy":{"click":false,"hover":false,"focus":false},"type":"overlay","roleAttribute":"","ariaLabel":"Men\u00fa"}'><button aria-haspopup="dialog" aria-label="Abrir el menú" class="wp-block-navigation__responsive-container-open" 
 				data-wp-on--click="actions.openMenuOnClick"
@@ -570,20 +582,7 @@ body, .editor-styles-wrapper {
 <template id="tp-language" data-tp-language="es_MX"></template><script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/es/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/yith-wonder/*","/es/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
-        <div id="trp-floater-ls" onclick="" data-no-translation class="trp-language-switcher-container trp-floater-ls-names trp-bottom-right trp-color-dark flags-full-names" >
-            <div id="trp-floater-ls-current-language" class="trp-with-flags">
-
-                <a href="./" class="trp-floater-ls-disabled-language trp-ls-disabled-language" onclick="event.preventDefault()">
-					<img class="trp-flag-image" src="../../wp-content/plugins/translatepress-multilingual/assets/images/flags/es_MX.png" width="18" height="12" alt="es_MX" title="Spanish">Spanish				</a>
-
-            </div>
-            <div id="trp-floater-ls-language-list" class="trp-with-flags" >
-
-                <div class="trp-language-wrap trp-language-wrap-bottom">                    <a href="../../2026-fundraising-kickoff/"
-                         title="English">
-          						  <img class="trp-flag-image" src="../../wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English">English					          </a>
-                <a href="./" class="trp-floater-ls-disabled-language trp-ls-disabled-language" onclick="event.preventDefault()"><img class="trp-flag-image" src="../../wp-content/plugins/translatepress-multilingual/assets/images/flags/es_MX.png" width="18" height="12" alt="es_MX" title="Spanish">Spanish</a></div>            </div>
-        </div>
+        
 
     <script data-wp-router-options="{&quot;loadOnClientNavigation&quot;:true}" fetchpriority="low" id="@wordpress/block-library/navigation/view-js-module" src="../../wp-includes/js/dist/script-modules/block-library/navigation/view.min.js" type="module"></script>
 <script id="ce4wp_form_submit-js-extra">
