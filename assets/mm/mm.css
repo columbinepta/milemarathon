@@ -250,14 +250,6 @@ ul.mm-chips>li::marker{content:none}
 .mm-faq-a{padding:0 1.25rem 1rem}
 .mm-faq-a p{color:var(--mm-muted)}
 
-/* ---------- Blog ---------- */
-.mm-entry{position:relative;margin:0 0 1.25rem;padding:1.4rem 1.5rem 1.2rem;border:1px solid var(--mm-line);border-radius:var(--mm-radius);background:#fff}
-.mm-entry-date{display:inline-block;margin:0 0 .6rem;padding:.2rem .65rem;border-radius:999px;background:var(--mm-lilac);color:var(--mm-purple);font-family:var(--mm-display);font-size:.95rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.mm-entry h3{margin:0 0 .5rem;font-size:clamp(1.35rem,1.15rem + .7vw,1.7rem)}
-.mm-entry p:last-child{margin-bottom:0}
-.mm-entry p{color:var(--mm-muted)}
-.nfd-wb-text__text-13 h2{color:var(--mm-purple)}
-
 /* ---------- Volunteer ---------- */
 ul.mm-checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem 1rem;margin:.5rem 0 1.5rem;padding:0;list-style:none}
 ul.mm-checks li{display:flex;align-items:center;gap:.6rem;font-weight:500}
